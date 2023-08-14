@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 
-export default function TextForm(prope) {
+export default function TextForm(props) {
   const [text, setText] = useState("Enter Text here");
   //   console.log(useState("Enter Text here"));
   const handleUpClick = () => {
     let newtext = text.toUpperCase();
     setText(newtext);
+    props.showalert("The Text Been Changed To Upper Case", "success");
   };
   const handleLoClick = () => {
     let newtext = text.toLowerCase();
     setText(newtext);
+    props.showalert("The Text Been Changed To Lower Case", "success");
   };
   const handleOnChange = (event) => {
     setText(event.target.value);
-    console.log("the text being change");
+    // console.log("the text being change");
   };
 
   const handleOnClear = () => {
@@ -23,9 +25,12 @@ export default function TextForm(prope) {
   return (
     <>
       <div>
-        <div className="mb-3">
+        <div
+          className="mb-3"
+          style={{ color: props.mode === "dark" ? "white" : "#042743" }}
+        >
           <label htmlFor="myBox" className="form-label">
-            {prope.Title}
+            {props.Title}
           </label>
         </div>
         <textarea
@@ -34,6 +39,10 @@ export default function TextForm(prope) {
           id="myBox"
           rows="8"
           onChange={handleOnChange}
+          style={{
+            backgroundColor: props.mode === "dark" ? "gray" : "white",
+            color: props.mode === "dark" ? "white" : "#042743", // Add text color
+          }}
         ></textarea>
         <br />
         <button
@@ -54,7 +63,10 @@ export default function TextForm(prope) {
           Convert to Clear Text Area
         </button>
       </div>
-      <div className="container my-3">
+      <div
+        className="container my-3"
+        style={{ color: props.mode === "dark" ? "white" : "#042743" }}
+      >
         <h1>Text Summary Is Here</h1>
         <p>
           the text containes tolal of {text.length} character in the sentance
