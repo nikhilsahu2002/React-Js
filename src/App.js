@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-// import About from "./Components/About";
+import About from "./Components/About";
 import React from "react";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
 
@@ -37,24 +37,24 @@ function App() {
   };
   return (
     <>
-      {/* <Router> */}
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
-      <Alert alert={alert} />
-      <div className="container my-3">
-        {/* <Switch> */}
-        {/* <Route exact path="/about"> */}
-        {/* <About /> */}
-        {/* </Route> */}
-        {/* <Route exact path="/"> */}
-        <TextForm
-          showalert={ShowAlert}
-          Title="Enter The Text To Anyize"
-          mode={mode}
-        />
-        {/* </Route> */}
-        {/* </Switch> */}
-      </div>
-      {/* </Router> */}
+      <Router>
+        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert} />
+        <div className="container my-3">
+          <Switch>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/">
+              <TextForm
+                showalert={ShowAlert}
+                Title="Enter The Text To Anyize"
+                mode={mode}
+              />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </>
   );
 }
