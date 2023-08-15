@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 import About from "./Components/About";
-
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 import Alert from "./Components/Alert";
 
 function App() {
@@ -41,10 +42,10 @@ function App() {
         <Alert alert={alert} />
         <div className="container my-3">
           <Switch>
-            <Route path="/about">
+            <Route exact path="/about">
               <About />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <TextForm
                 showalert={ShowAlert}
                 Title="Enter The Text To Anyize"
