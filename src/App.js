@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import About from "./Components/About";
+// import About from "./Components/About";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
 
