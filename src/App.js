@@ -37,24 +37,24 @@ function App() {
   };
   return (
     <>
-      <Router>
-        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
-        <Alert alert={alert} />
-        <div className="container my-3">
-          <Switch>
-            <Route exact path="/about">
-              <About />
-            </Route>
-            <Route exact path="/">
-              <TextForm
-                showalert={ShowAlert}
-                Title="Enter The Text To Anyize"
-                mode={mode}
-              />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      {/* <Router> */}
+      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+      <Alert alert={alert} />
+      <div className="container my-3">
+        {/* <Switch> */}
+        {/* <Route exact path="/about"> */}
+        {/* <About /> */}
+        {/* </Route> */}
+        {/* <Route exact path="/"> */}
+        <TextForm
+          showalert={ShowAlert}
+          Title="Enter The Text To Anyize"
+          mode={mode}
+        />
+        {/* </Route> */}
+        {/* </Switch> */}
+      </div>
+      {/* </Router> */}
     </>
   );
 }
