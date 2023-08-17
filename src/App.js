@@ -45,7 +45,7 @@ function App() {
             <Route exact path="/about">
               <About />
             </Route>
-            <Route exact path="/">
+            <Route exact path="/React-Js/">
               <TextForm
                 showalert={ShowAlert}
                 Title="Enter The Text To Anyize"
